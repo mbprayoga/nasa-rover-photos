@@ -1,0 +1,42 @@
+/* RoverCard.css */
+
+.roverContainerBig {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: row; /* Set to landscape orientation */
+    align-items: left; /* Center items vertically */
+    border: 2px solid white; /* Add a white outline */
+    border-radius: 10px; /* Adjust border radius as needed */
+    padding: 15px; /* Add padding for better spacing */
+  }
+  
+  #roverTitle {
+    color: white;
+    font-size: 28px; /* Bigger size for the title */
+    font-weight: bold;
+    font-family: Verdana;
+    text-align: center; /* Center the title text */
+    margin-bottom: 10px; /* Add some space below the title */
+  }
+  
+  .roverDescriptionBig {
+    display: flex;
+    color: white;
+    font-family: Verdana;
+    flex-direction: column; /* Align the description vertically */
+    justify-content: flex-start; /* Align the description to the left */
+    margin-left: 20px; /* Add some space between title and description */
+  }
+  
+  .roverDescriptionBig p {
+    margin: 5px 0; /* Add space between description lines */
+  }
+  
+  .roverPosterBig {
+    width: 220px;
+    height: 220px;
+    border-radius: 2px;
+    border-radius: 20px;
+    /* Remove the image styling since it's not needed */
+  }
+  

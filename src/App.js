@@ -5,9 +5,11 @@ import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-ro
 import Photo from "./pages/PhotoPage";
 import Rover from "./pages/RoverPage";
 import Profile from "./pages/ProfilePage";
-
-// Components
-import Header from "./components/header";
+import PhotoDetailPage from "./pages/PhotoDetailPage";
+import RoverDetailPage from "./pages/RoverDetailPage";
+import { HiHome } from "react-icons/hi";
+import { MdGroup } from "react-icons/md";
+import { FaBook, FaGooglePlay } from "react-icons/fa"; 
 
 import "./App.css";
 
@@ -15,14 +17,16 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
+        <header>
+          <p id="titleGroup">NASA Rover Photos</p>
+        </header>
         <Routes>
         <Route path="/" element={<Navigate to="/photo" replace />} />
         <Route path="/photo" element={<Photo/>} />
         <Route path="/rover" element={<Rover/>} />
         <Route path="/profile" element={<Profile />} />
-        {/* <Route path="/photo/detail/:id" element={<DetailPage/>} />
-        <Route path="/rover/detail/:id" element={<DetailPage/>} /> */}
+        <Route path="/photo/detail/:id" element={<PhotoDetailPage/>} />
+        <Route path="/rover/detail/:id" element={<RoverDetailPage/>} />
       </Routes>
       <footer>
         <Link to="/photo" className="iconWrapper"><HiHome className="icon" />Photo</Link>

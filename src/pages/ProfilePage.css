@@ -1,0 +1,18 @@
+.container {
+    text-align: center;
+    margin: 20px;
+    color: white; /* Set font color to white */
+}
+
+.detail-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.detail-detail {
+    margin-top: 10px;
+    color: white; /* Set font color to white */
+}

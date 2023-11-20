@@ -1,22 +1,10 @@
-import "./DisplayCard.css";
+import "./PhotoCard.css";
+import React from "react";
 
-export default function DisplayCard(props) {
-  return (
-    <div className="containerBig">
-      <img src={props.img} alt="" className="posterBig" />
-      <div className="descriptionBig">
-        <div>
-          <p id="title">{props.title}</p>
-          <p id="genre">{props.genre}</p>
+export default function PhotoCard(props) {
+    return (
+        <div className="photoContainerBig" onClick={props.onClick}>
+            <img src={props.img} alt="" className="photoPosterBig" />
         </div>
-        <div>
-          <AiFillStar color={props.color} size={props.size} />
-          <AiFillStar color={props.color} size={props.size} />
-          <AiFillStar color={props.color} size={props.size} />
-          <AiFillStar color={props.color} size={props.size} />
-          <AiFillStar color={props.color} size={props.size} />
-        </div>
-      </div>
-    </div>
-  );
+    );
 }
