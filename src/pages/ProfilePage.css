@@ -1,18 +1,39 @@
-.container {
+/* ProfilePage.css */
+
+.profileContainer {
+    text-align: center;
+    margin: 20px;
+    color: white; /* Set font color to white */
+    display: flex;
+    flex-direction: row; /* Arrange children in a row */
+    align-items: center; /* Center items vertically */
+}
+
+.profileImg {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px; /* Add margin to the right of the image */
+}
+
+.profileDetails {
+    text-align: left; /* Align details to the left */
+}
+
+.profileDetail {
+    margin-top: 10px;
+    color: white; /* Set font color to white */
+}
+
+.appDescContainer {
     text-align: center;
     margin: 20px;
     color: white; /* Set font color to white */
 }
 
-.detail-img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.detail-detail {
-    margin-top: 10px;
-    color: white; /* Set font color to white */
+.appDescTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007BFF; /* Set title color to blue */
 }

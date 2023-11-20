@@ -1,0 +1,47 @@
+.roverDetailContainer {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-bottom: 60px; 
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #FFFFFF;
+    text-align: center; 
+    margin-bottom: 15px;
+}
+
+.roverDetail {
+    font-size: 16px;
+    color: white;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.cameraList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .cameraList li {
+    margin-bottom: 5px;
+    color: #333;
+  }
+
+.cameraName {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Style for the camera full name */
+  .cameraFullName {
+    color: #777;
+  }

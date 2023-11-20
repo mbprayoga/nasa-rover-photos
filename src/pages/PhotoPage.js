@@ -1,6 +1,9 @@
 import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+
 import PhotoCard from "../components/PhotoCard";
+
 import "./PhotoPage.css";
 
 function PhotoPage() {
@@ -10,6 +13,7 @@ function PhotoPage() {
   const [currentPage, setCurrentPage] = useState(1);
   const [solValue, setSolValue] = useState(1000);
   const [roverName, setRoverName] = useState("curiosity");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,6 +45,10 @@ function PhotoPage() {
       fetchData();
     }
   }, [isLoaded, currentPage, solValue, roverName]);
+
+  const navigateToDetailPage = (item) => {
+    navigate(`/photo/detail/${item.id}`, { state: { item: item } });
+};
 
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);
@@ -136,7 +144,7 @@ function PhotoPage() {
         {photo.map((item, index) => (
           <Fragment key={item.id}>
             <div className="photoColumn">
-              <PhotoCard img={item.img_src} />
+              <PhotoCard img={item.img_src} onClick={() => navigateToDetailPage(item)}/>
             </div>
           </Fragment>
         ))}

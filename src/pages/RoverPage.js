@@ -1,5 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 import RoverCard from "../components/RoverCard";
 
@@ -9,6 +10,7 @@ function RoverPage() {
     const [rover, setRover] = useState([]);
     const [isLoaded, setIsLoaded] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         // Function to fetch data from API
@@ -40,6 +42,10 @@ function RoverPage() {
         }
       }, [isLoaded]);
 
+      const navigateToDetailPage = (item) => {
+        navigate(`/rover/detail/${item.id}`, { state: { item: item } });
+    };
+
     return (
         <>
             <p id="rovers">Rovers</p>
@@ -47,7 +53,7 @@ function RoverPage() {
                 <div className="roverRow">
                     {rover.map((item, index) => (
                         <Fragment key={item.id}>
-                            <RoverCard total_photos={item.total_photos} name={item.name} status={item.status} max_sol={item.max_sol}/>
+                            <RoverCard total_photos={item.total_photos} name={item.name} status={item.status} max_sol={item.max_sol} onClick={() => navigateToDetailPage(item)}/>
                             {rover.length === index + 1 ? (
                                 <div style={{ marginRight: 40 }} />
                             ) : null}
