@@ -16,8 +16,8 @@ p {
   }
   
   button {
-    background-color: #007BFF;
-    color: white;
+    background-color: #e2b714;
+    color: #d0cfc4;
     padding: 10px;
     border: none;
     cursor: pointer;
@@ -25,7 +25,8 @@ p {
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #d0cfc4;
+    color: #e2b714;
   }
   
   #solSlider {

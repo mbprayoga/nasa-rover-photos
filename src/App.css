@@ -38,56 +38,123 @@
 }
 
 body {
-  background-color: rgb(30, 30, 30);
-  }
-  
-  #titleGroup { margin: 0;
-  font-size: 18px; color: white;
-  font-family: Verdana; font-weight: bold; font-size: 24px;
-  }
-  
-  header {
-  background-color: rgb(23, 22, 22); margin: auto;
-  text-align: center; padding: 10px 0;
+  background-color: #323437;
+}
+
+#titleGroup {
+  margin: 0;
+  font-family: Verdana;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+#titleGroup span {
+  color: #6677cc; /* Set the color for "NASA" to white */
+  font-size: 38px;
+  text-decoration: none;
+}
+#titleGroup spanphoto {
+  color: #616366; /* Set the color for "NASA" to white */
+  font-size: 15px;
+}
+
+header {
+  margin: auto;
+  text-align: center;
+  padding: 10px 0;
   height: 20px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  color: #ffffff;
-  margin-bottom: 16px;
-  }
-  
-  footer { display: flex;
-  position: fixed; bottom: 0;
-  left: 0;
-  background-color: rgb(23, 22, 22);
-  width: 100%;
-  justify-content: space-around; align-items: center;
-border-top-left-radius: 10px; border-top-right-radius: 10px; border-top: black;
-border-width: 2px;
+  color: #fff;
+  margin-top: 15px;
+  margin-bottom: 10px; /* Adjust the margin-bottom value to your preference */
 }
 
-.iconWrapper { display: flex;
-flex-direction: column; align-items: center; text-decoration: none; color: white;
-font-family: Verdana; padding: 5px 0;
-font-size: 12px;
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #2c2e31;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top: black;
+  border-width: 2px;
+}
+
+.footer-left p {
+  margin: 0;
+  color: #616366;
+  font-family: Verdana;
+  font-size: 14px;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-right p {
+  margin: 0 10px 0 0;
+  color: white;
+  font-family: Verdana;
+  font-size: 14px;
+}
+
+.footer-right a {
+  margin: 0 10px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer-right img {
+  width: 24px; /* Adjust the size of the GitHub icon as needed */
+}
+
+.iconWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #616366;
+  font-family: Verdana;
+  padding: 5px 0;
+  font-size: 12px;
 }
 
 .icon {
-color: white; margin-bottom: 4px; font-size: 22px;
+  color: #616366;
+  margin-bottom: 4px;
+  font-size: 22px;
 }
 
 .active {
-color: rgb(65, 65, 233);
+  color: rgb(65, 65, 233);
 }
 
-::-webkit-scrollbar { width: 5px;
-height: 5px;
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
 }
-::-webkit-scrollbar-thumb { background: #4141e9; border-radius: 0px;
+
+::-webkit-scrollbar-thumb {
+  background: #4141e9;
+  border-radius: 0px;
 }
-::-webkit-scrollbar-thumb:hover { background: #4141e9;
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4141e9;
 }
-::-webkit-scrollbar-track { background: #24233b;
-box-shadow: inset 0px 0px 0px 0px #f0f0f0;
+
+::-webkit-scrollbar-track {
+  background: #24233b;
+  box-shadow: inset 0px 0px 0px 0px #f0f0f0;
 }

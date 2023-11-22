@@ -79,18 +79,6 @@ function PhotoPage() {
     <>
       <div id="filters">
         <div className="filterItem">
-          <input
-            type="range"
-            id="solSlider"
-            min={1}
-            max={5111}
-            step={1}
-            value={solValue}
-            onChange={handleSolChange}
-          />
-          <label htmlFor="solSlider">Sol Value: {solValue}</label>
-        </div>
-        <div className="filterItem">
           <label>Rover Name:</label>
           <div>
             <label>
@@ -130,6 +118,18 @@ function PhotoPage() {
               Opportunity
             </label>
           </div>
+        </div>
+        <div className="filterItem">
+          <input
+            type="range"
+            id="solSlider"
+            min={1}
+            max={5111}
+            step={1}
+            value={solValue}
+            onChange={handleSolChange}
+          />
+          <label htmlFor="solSlider">Sol Value: {solValue}</label>
         </div>
         <button onClick={handleConfirmQuery}>Confirm Query</button>
       </div>

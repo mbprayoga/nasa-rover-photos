@@ -1,39 +1,76 @@
 /* ProfilePage.css */
 
+body {
+    background-color: #2c3e50;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
 .profileContainer {
     text-align: center;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
     margin: 20px;
-    color: white; /* Set font color to white */
+    color: #fff;
+    flex-direction: row; /* Changed to column for vertical alignment */
     display: flex;
-    flex-direction: row; /* Arrange children in a row */
-    align-items: center; /* Center items vertically */
+    font-family: Verdana;
 }
 
 .profileImg {
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
-    margin-right: 20px; /* Add margin to the right of the image */
+    display: flex;
 }
 
-.profileDetails {
-    text-align: left; /* Align details to the left */
+.profileDetailName {
+    margin: 5px 0;
+    font-size: 24px;
+    color: #ecf0f1;
+    text-align: left;
+    margin-left: 15px;
 }
 
-.profileDetail {
-    margin-top: 10px;
-    color: white; /* Set font color to white */
+.profileDetailAcc {
+    margin: 5px 0;
+    font-size: 15px;
+    color: #616366;
+    text-align: left;
+    margin-left: 15px;
 }
 
 .appDescContainer {
-    text-align: center;
-    margin: 20px;
-    color: white; /* Set font color to white */
+    text-align: left;
+    border-radius: 20px;
+    margin-top: 3px;
+    font-family: Verdana;
+    background-color: #2c2e31;
+    padding: 5px; /* Add padding to the container */
+    box-sizing: border-box; 
+    max-width: 1000px; /* Set a maximum width for the container */
+    margin-left: auto; /* Center the container horizontally */
+    margin-right: auto;
 }
 
 .appDescTitle {
     font-size: 24px;
     font-weight: bold;
-    color: #007BFF; /* Set title color to blue */
+    color: #6677cc;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.appDescContainer p {
+    color: #ecf0f1;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.profileDetail {
+    margin: 5px 0;
+    color: #ecf0f1;
+    text-align: left;
+    margin-left: 15px;
 }
