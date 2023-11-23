@@ -23,9 +23,9 @@ function App() {
             <br />
             Rover <spanphoto>Photos</spanphoto>
           </Link>
-          <Link to="/photo" className="iconWrapper"><MdPhoto className="icon" />Photo</Link>
-          <Link to="/rover" className="iconWrapper"><RiRocketFill className="icon" />Rover</Link>
-          <Link to="/profile" className="iconWrapper"><MdPerson className="icon" />About</Link>
+          <Link to="/photo" className="iconWrapper" ><MdPhoto className="icon" />Photo</Link>
+          <Link to="/rover" className="iconWrapper" ><RiRocketFill className="icon" />Rover</Link>
+          <Link to="/profile" className="iconWrapper" ><MdPerson className="icon" />About</Link>
         </header>
         <Routes>
           <Route path="/" element={<Navigate to="/photo" replace />} />

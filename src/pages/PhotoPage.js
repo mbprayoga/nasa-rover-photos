@@ -5,6 +5,9 @@ import { useNavigate } from 'react-router-dom';
 import PhotoCard from "../components/PhotoCard";
 
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
+import { FaSearch } from "react-icons/fa";
+
+// ... (your existing imports)
 
 import "./PhotoPage.css";
 
@@ -16,6 +19,7 @@ function PhotoPage() {
   const [solValue, setSolValue] = useState(1000);
   const [roverName, setRoverName] = useState("curiosity");
   const navigate = useNavigate();
+  let maxSol;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +33,7 @@ function PhotoPage() {
           setIsLoaded(true);
           setIsLoading(false);
           localStorage.setItem(
-            "cachedData",
+            "cachedDataPhoto",
             JSON.stringify(response.data.photos)
           );
         }
@@ -39,7 +43,7 @@ function PhotoPage() {
       }
     };
 
-    const cachedData = localStorage.getItem("cachedData");
+    const cachedData = localStorage.getItem("cachedDataPhoto");
     if (!isLoaded && !navigator.onLine && cachedData) {
       setPhoto(JSON.parse(cachedData));
       setIsLoaded(true);
@@ -48,9 +52,34 @@ function PhotoPage() {
     }
   }, [isLoaded, currentPage, solValue, roverName]);
 
+  useEffect(() => {
+    // Determine the max sol value based on the chosen roverName
+    switch (roverName) {
+      case 'curiosity':
+        maxSol = 4003; // Set the max sol value for Curiosity
+        break;
+      case 'perseverance':
+        maxSol = 968; // Set the max sol value for Perseverance
+        break;
+      case 'opportunity':
+        maxSol = 5111; // Set the max sol value for Opportunity
+        break;
+      case 'spirit':
+        maxSol = 2208; // Set the max sol value for Spirit
+        break;
+      default:
+        maxSol = 5111; // Set a default max sol value
+    }
+
+    // Update the solValue if it exceeds the new maxSol
+    if (solValue > maxSol) {
+      setSolValue(maxSol);
+    }
+  }, [roverName, solValue]);
+
   const navigateToDetailPage = (item) => {
     navigate(`/photo/detail/${item.id}`, { state: { item: item } });
-};
+  };
 
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);
@@ -70,104 +99,82 @@ function PhotoPage() {
   };
 
   const handleSolChange = (event) => {
-    setSolValue(parseInt(event.target.value));
+    let newValue = parseInt(event.target.value);
+
+    // Ensure the value is within the allowed range
+    if(newValue>maxSol){
+      newValue = maxSol;
+    }
+    
+
+    setSolValue(newValue);
   };
 
   const handleRoverChange = (event) => {
     const newRoverName = event.target.value;
     setRoverName(newRoverName);
-
-    // Determine the max sol value based on the chosen roverName
-    let maxSol;
-    switch (newRoverName) {
-      case 'curiosity':
-        maxSol = 4003; // Set the max sol value for Curiosity
-        break;
-      case 'perseverance':
-        maxSol = 968; // Set the max sol value for Perseverance
-        break;
-      case 'opportunity':
-        maxSol = 5111; // Set the max sol value for Perseverance
-        break;
-      case 'spirit':
-        maxSol = 2208; // Set the max sol value for Perseverance
-        break;
-      default:
-        maxSol = 5111; // Set a default max sol value
-    }
-
-    // Update the solValue if it exceeds the new maxSol
-    if (solValue > maxSol) {
-      setSolValue(maxSol);
-    }
-
-    // Set the new max value for the solSlider
-    document.getElementById('solSlider').max = maxSol;
   };
 
   return (
-    <>
-      <div id="filters">
-        <div className="filterItem">
-          <div>
-            <label>
-              <input
-                type="radio"
-                value="curiosity"
-                checked={roverName === "curiosity"}
-                onChange={handleRoverChange}
-              />
-              Curiosity
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="perseverance"
-                checked={roverName === "perseverance"}
-                onChange={handleRoverChange}
-              />
-              Perseverance
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="spirit"
-                checked={roverName === "spirit"}
-                onChange={handleRoverChange}
-              />
-              Spirit
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="opportunity"
-                checked={roverName === "opportunity"}
-                onChange={handleRoverChange}
-              />
-              Opportunity
-            </label>
+    <div>
+      <div className="prevFilterNext">
+        <div><MdNavigateBefore id="navIcon" className="navIcon" onClick={handlePrevPage}/></div>
+        <div id="filters">
+          <div className="filterItem">
+            <div className="radioGroup">
+              <label className={`radioLabel ${roverName === 'curiosity' ? 'active' : ''}`}>
+                <input
+                  type="radio"
+                  value="curiosity"
+                  checked={roverName === "curiosity"}
+                  onChange={handleRoverChange}
+                />
+                Curiosity
+              </label>
+              <label className={`radioLabel ${roverName === 'perseverance' ? 'active' : ''}`}>
+                <input
+                  type="radio"
+                  value="perseverance"
+                  checked={roverName === "perseverance"}
+                  onChange={handleRoverChange}
+                />
+                Perseverance
+              </label>
+              <label className={`radioLabel ${roverName === 'spirit' ? 'active' : ''}`}>
+                <input
+                  type="radio"
+                  value="spirit"
+                  checked={roverName === "spirit"}
+                  onChange={handleRoverChange}
+                />
+                Spirit
+              </label>
+              <label className={`radioLabel ${roverName === 'opportunity' ? 'active' : ''}`}>
+                <input
+                  type="radio"
+                  value="opportunity"
+                  checked={roverName === "opportunity"}
+                  onChange={handleRoverChange}
+                />
+                Opportunity
+              </label>
+            </div>
           </div>
+          <div className="filterItem">
+            <label className="solLabel" htmlFor="solInput">Sol:</label>
+            <input
+              type="number"
+              id="solInput"
+              min={1}
+              max={maxSol}
+              step={1}
+              value={solValue}
+              onChange={handleSolChange}
+            />
+          </div>
+          <div><FaSearch id="searchIcon" onClick={handleConfirmQuery}/></div>
         </div>
-        <div className="filterItem">
-          <input
-            type="range"
-            id="solSlider"
-            min={1}
-            max={5111}
-            step={1}
-            value={solValue}
-            onChange={handleSolChange}
-          />
-          <label htmlFor="solSlider">Sol: {solValue}</label>
-        </div>
-        <button onClick={handleConfirmQuery}>Confirm</button>
-      </div>
-
-
-      <div id="photos">
-        <MdNavigateBefore onClick={handlePrevPage}/>
-        <span>{currentPage}</span>
-        <MdNavigateNext onClick={handleNextPage}/>
+        <div><MdNavigateNext id="navIcon" className="navIcon" onClick={handleNextPage}/></div>
       </div>
       <div className="photoContainerTop">
         {photo.map((item, index) => (
@@ -178,7 +185,7 @@ function PhotoPage() {
           </Fragment>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 

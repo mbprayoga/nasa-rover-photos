@@ -23,7 +23,7 @@ function RoverPage() {
               setIsLoaded(true);
               setIsLoading(false);
               // Store data in local storage
-              localStorage.setItem("cachedData", JSON.stringify(response.data.rovers));
+              localStorage.setItem("cachedDataRover", JSON.stringify(response.data.rovers));
             }
           } catch (err) {
             console.log(err);
@@ -32,7 +32,7 @@ function RoverPage() {
         };
     
         // Check for cached data in local storage
-        const cachedData = localStorage.getItem("cachedData");
+        const cachedData = localStorage.getItem("cachedDataRover");
         if (!isLoaded && !navigator.onLine && cachedData) {
           setRover(JSON.parse(cachedData));
           setIsLoaded(true);

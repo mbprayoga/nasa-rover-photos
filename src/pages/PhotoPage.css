@@ -4,44 +4,134 @@ p {
     margin: 0;
   }
   
+  .prevFilterNext {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #navIcon {
+    font-size: 28px; /* Adjust the font size as needed for a bigger icon */
+    cursor: pointer;
+    color: #616366; /* Adjust the color as needed */
+  }
+  
+  #navIcon:hover {
+    color: #fff; /* Adjust the color on hover as needed */
+  }
+  
   #filters {
-    max-width: 60%;
-    padding: 20px;
-    margin: auto; /* Center-align the entire container */
-    margin-top: 50px;
+    max-width: 700px;
+    padding: 10px;
+    margin: 0; /* Set margin to 0 */
     background-color: #2c2e31;
-    border-radius: 10px; /* Adjust border radius as needed */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     display: flex;
+    flex-wrap: wrap;
     justify-content: center; /* Center-align child elements horizontally */
-    align-items: center; /* Center-align child elements vertically */
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   
   .filterItem {
     margin-right: 20px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
   }
-
-  .filterItem a{
+  
+  .filterItem a {
     margin-right: 20px;
   }
   
-  button {
-    background-color: #6677cc;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
+  .solLabel {
+    color: #616366;
     font-family: Verdana;
+    margin-right: 4px;
+    font-size: 15px;
   }
   
-  button:hover {
-    background-color: #2e365e;
-    color: #fff;
+  #solInput {
+    font-family: Verdana;
+    width: 60px; /* Adjust width as needed */
+    font-size: 15px; /* Adjust font size as needed */
+    margin-left: 5px; /* Adjust margin as needed */
+    color: #fff; /* Adjust text color as needed */
+    background-color: #2c2e31;
+    border: none;
   }
   
-  #solSlider {
+  #solInput:focus {
+    outline: none; /* Remove focus outline if it's not needed */
+  }
+  
+  /* Add these styles to your existing CSS file */
+  .radioGroup {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .radioLabel {
+    margin-bottom: 0px;
+    cursor: pointer;
+    font-family: Verdana;
+    color: #616366;
     margin-right: 10px;
+    font-size: 15px;
+    transition: color 0.3s;
+  }
+  
+  .radioLabel.active,
+  .radioLabel.active input:checked + span {
+    color: #fff; /* Adjust the color for the selected state as needed */
+  }
+  
+  .radioLabel:hover {
+    color: #fff; /* Adjust the color for the hover state as needed */
+  }
+  
+  .radioLabel input:checked + span {
+    color: #fff; /* Adjust the color for the selected state as needed */
+  }
+  
+  .radioLabel input {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .radioLabel span {
+    position: relative;
+    padding-left: 25px; /* Adjust the padding as needed */
+    cursor: pointer;
+  }
+  
+  .radioLabel span:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px; /* Adjust the top position as needed */
+    width: 16px; /* Adjust the width as needed */
+    height: 16px; /* Adjust the height as needed */
+    border: 2px solid #2196F3; /* Adjust the border color as needed */
+    background-color: #fff; /* Adjust the background color as needed */
+    border-radius: 50%;
+  }
+  
+  .radioLabel input:checked + span:before {
+    background-color: #2196F3; /* Adjust the background color for the checked state as needed */
+    border-color: #2196F3; /* Adjust the border color for the checked state as needed */
+  }
+  
+  #searchIcon:hover {
+    color: #fff; /* Color change on hover */
+  }
+  
+  #searchIcon {
+    color: #616366;
+    margin-bottom: 4px;
+    font-size: 22px;
+    transition: color 0.3s;
+    width: 18px;
   }
   
   .photoContainerTop {
