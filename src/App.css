@@ -124,20 +124,28 @@ footer {
   flex-direction: column;
   align-items: center;
   text-decoration: none;
-  color: #616366;
+  color: #fff;
   font-family: Verdana;
   padding: 5px 0;
   font-size: 12px;
+  transition: color 0.3s; /* Added a transition for a smooth color change */
+}
+
+.iconWrapper:hover,
+.iconWrapper:hover .icon,
+.icon:hover {
+  color: #6677cc; /* Color change on hover */
 }
 
 .icon {
-  color: #616366;
+  color: #fff;
   margin-bottom: 4px;
   font-size: 22px;
+  transition: color 0.3s;
 }
 
 .active {
-  color: rgb(65, 65, 233);
+  color: #6677cc;
 }
 
 ::-webkit-scrollbar {
@@ -146,12 +154,12 @@ footer {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4141e9;
+  background: #6677cc;
   border-radius: 0px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4141e9;
+  background: #6677cc;
 }
 
 ::-webkit-scrollbar-track {

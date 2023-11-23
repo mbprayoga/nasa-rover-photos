@@ -7,27 +7,39 @@ function RoverDetailPage() {
     const item = state && state.item;
 
     if (!item) {
-        return <div className="roverDetailContainer">No data available.</div>;
+        return (
+            <div className="roverDetailContainer">
+                <h1 className="roverName">No data available.</h1>
+            </div>
+        );
     }
 
     return (
-        <div className="roverDetailContainer">
-            <h1>{item.name}</h1>
-            <p className="roverDetail">Landing Date: {item.landing_date}</p>
-            <p className="roverDetail">Launch Date: {item.launch_date}</p>
-            <p className="roverDetail">Status: {item.status}</p>
-            <p className="roverDetail">Max Sol: {item.max_sol}</p>
-            <p className="roverDetail">Max Date: {item.max_date}</p>
-            <p className="roverDetail">Total Photos: {item.total_photos}</p>
-            <p className="roverDetail">Available Camera: </p>
-            <ul className="cameraList">
-                {item.cameras.map(camera => (
-                    <li key={camera.name}>
-                        <span className="cameraName">{camera.name}</span> - 
-                        <span className="cameraFullName"> {camera.full_name}</span>
-                    </li>
-                ))}
-            </ul>
+        <div>
+            <h1 className="roverName">{item.name}</h1>
+            <div className="roverDetailContainer">
+                <div className="roverDetailContainerInside">
+                    <div className="roverDetails">
+                        <p><span className="detailLabel">Landing Date:</span> {item.landing_date}</p>
+                        <p><span className="detailLabel">Launch Date:</span> {item.launch_date}</p>
+                        <p><span className="detailLabel">Status:</span> {item.status === "active" ? "Active" : "Completed"}</p>
+                        <p><span className="detailLabel">Max Sol:</span> {item.max_sol} Sol (Martian Days)</p>
+                        <p><span className="detailLabel">Max Date:</span> {item.max_date}</p>
+                        <p><span className="detailLabel">Total Photos:</span> {item.total_photos}</p>
+                    </div>
+                </div>
+                <div className="cameraDetails">
+                    <p className="detailLabel">Available Cameras:</p>
+                    <ul className="cameraList">
+                        {item.cameras.map(camera => (
+                            <li key={camera.name}>
+                                <span className="cameraName">{camera.name}</span> - 
+                                <span className="cameraFullName"> {camera.full_name}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>   
+            </div>
         </div>
     );
 }

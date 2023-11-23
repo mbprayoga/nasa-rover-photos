@@ -37,7 +37,7 @@ function App() {
         </Routes>
         <footer>
           <div className="footer-left">
-            <p>Ayo Berburu Alien!</p>
+            <p>Journey to Mars: NASA Rover Photos</p>
           </div>
           <div className="footer-right">
             <a href="https://github.com/mbprayoga/nasa-rover-photos.git" target="_blank" rel="noopener noreferrer">

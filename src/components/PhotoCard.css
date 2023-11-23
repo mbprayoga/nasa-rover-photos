@@ -1,7 +1,7 @@
-.photoContainerBig { padding-left: 1%;
+.photoContainerBig { padding-left: 1%; max-width: fit-content;
 }
 
-.photoPosterBig { width: 220px; height: 220px;
+.photoPosterBig { width: 250px; height: 250px;
 border-radius: 2px; border-radius: 20px;
 }
 

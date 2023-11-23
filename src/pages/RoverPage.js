@@ -50,16 +50,13 @@ function RoverPage() {
         <>
             <p id="rovers">Rovers</p>
             <div className="roverContainerTop">
-                <div className="roverRow">
                     {rover.map((item, index) => (
                         <Fragment key={item.id}>
-                            <RoverCard total_photos={item.total_photos} name={item.name} status={item.status} max_sol={item.max_sol} onClick={() => navigateToDetailPage(item)}/>
-                            {rover.length === index + 1 ? (
-                                <div style={{ marginRight: 40 }} />
-                            ) : null}
+                          <div className="roverColumn"> 
+                            <RoverCard total_photos={item.total_photos} name={item.name} status={item.status} max_sol={item.max_sol} landing_date={item.landing_date} max_date={item.max_date} onClick={() => navigateToDetailPage(item)}/>
+                          </div>
                         </Fragment>
                     ))}
-                </div>
             </div>
         </>
     );
