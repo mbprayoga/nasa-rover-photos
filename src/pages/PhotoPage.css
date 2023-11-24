@@ -8,9 +8,13 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px; /* Add some padding for better aesthetics */
+    white-space: nowrap; /* Prevent items from wrapping to the next line */
   }
 
   #navIcon {
+    
+    display: inline-block;
     font-size: 28px; /* Adjust the font size as needed for a bigger icon */
     cursor: pointer;
     color: #616366; /* Adjust the color as needed */
@@ -132,6 +136,7 @@ p {
     font-size: 22px;
     transition: color 0.3s;
     width: 18px;
+    margin-right: 5px;
   }
   
   .photoContainerTop {

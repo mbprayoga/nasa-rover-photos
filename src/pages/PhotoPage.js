@@ -118,7 +118,6 @@ function PhotoPage() {
   return (
     <div>
       <div className="prevFilterNext">
-        <div><MdNavigateBefore id="navIcon" className="navIcon" onClick={handlePrevPage}/></div>
         <div id="filters">
           <div className="filterItem">
             <div className="radioGroup">
@@ -173,8 +172,10 @@ function PhotoPage() {
             />
           </div>
           <div><FaSearch id="searchIcon" onClick={handleConfirmQuery}/></div>
+          <div></div>
+          <div><MdNavigateBefore id="navIcon" className="navIcon" onClick={handlePrevPage}/></div>
+          <div><MdNavigateNext id="navIcon" className="navIcon" onClick={handleNextPage}/></div>
         </div>
-        <div><MdNavigateNext id="navIcon" className="navIcon" onClick={handleNextPage}/></div>
       </div>
       <div className="photoContainerTop">
         {photo.map((item, index) => (

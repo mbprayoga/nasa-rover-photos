@@ -53,6 +53,7 @@ body {
     margin-left: auto; /* Center the container horizontally */
     margin-right: auto;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding-bottom: 00px;
 }
 
 .appDescTitle {
@@ -74,4 +75,5 @@ body {
     color: #ecf0f1;
     text-align: left;
     margin-left: 15px;
+    padding-bottom: 60px;
 }
