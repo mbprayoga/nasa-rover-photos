@@ -1,3 +1,4 @@
+//berubah di sini
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link, Navigate } from 'react-router-dom';
 
@@ -52,3 +53,4 @@ function App() {
 }
 
 export default App;
+//sama di sini
